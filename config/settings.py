@@ -12,12 +12,17 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    # Django Apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third Party Apps
+    "taggit",
+    # Local Apps
+    "app.apps.AppConfig",
 ]
 
 MIDDLEWARE = [
@@ -100,10 +105,15 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDAI_URL = "/media/"
-MEDAI_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Django Taggit
+# https://django-taggit.readthedocs.io/en/latest/
+
+TAGGIT_CASE_INSENSITIVE = True
