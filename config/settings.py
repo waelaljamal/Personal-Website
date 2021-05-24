@@ -1,15 +1,24 @@
+# Django
 from pathlib import Path
+
+# Third Party Libraries
+import environ
+
+env = environ.Env()
+
+# reading .env file
+environ.Env.read_env(env_file=".env")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-uae#*=$8+j6xi$s=$^pqu)&9=1*9+i%dpb#dvx5&ymvuq5ro9p"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 INSTALLED_APPS = [
     # Django Apps
@@ -59,12 +68,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": env.db(),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -83,6 +88,10 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+# base Django admin URL (should be something obscure in production)
+
+ADMIN_URL = env("ADMIN_URL", default="admin/")
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

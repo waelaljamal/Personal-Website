@@ -1,5 +1,6 @@
 black==21.5b1
 Django==3.2.3
+django-environ==0.4.5
 django-taggit==1.4.0
 flake8==3.9.2
 Pillow==8.2.0
