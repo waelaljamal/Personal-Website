@@ -5,6 +5,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
+    path("", include("app.urls")),
 ]
 
 if settings.DEBUG:
