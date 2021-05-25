@@ -56,6 +56,8 @@ Personal Blog By Using Django Framework.
 
 ## Usage:
 
+### Django Silk:
+
 You can access the debug information by visit this link:
 
 ```bash
@@ -68,6 +70,17 @@ Silk primarily consists of:
 - A wrapper around SQL execution for profiling of database queries
 - A context manager/decorator for profiling blocks of code and functions either manually or dynamically.
 - A user interface for inspection and visualisation of the above.
+
+### Tailwind & Unpoly with Webpack:
+
+> **_NOTE:_** Use Tailwind and unpoly with Webpack Cli makes files small and compressed by dispensing with other codes in these libraries that we do not need in our project.
+
+I used **Tailwind** because it's best framework to design anything you want.
+it give you freedom to customize every pixel in the web screen like Flutter.
+
+I want to make my blog fast, light and portable, so I used the **Unpoly** Js Library.
+**Unpoly** enables fast and flexible frontends while keeping rendering logic on the server.
+It has no dependencies and plays nice with existing code.
 
 ## License:
 

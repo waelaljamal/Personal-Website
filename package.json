@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:watch-css\" \"npm:watch-js\"",
+    "build": "concurrently \"npm:build-css\" \"npm:build-js\"",
+    "watch-css": "postcss ./static/css/app.css -o ./static/dist/app.css -w --verbose",
+    "watch-js": "webpack-cli --watch --mode=development",
+    "build-css": "NODE_ENV=production postcss ./static/css/app.css -o ./static/dist/app.css",
+    "build-js": "NODE_ENV=production webpack-cli"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.0",
+    "cssnano": "^5.0.4",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "node-forge": "^0.10.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "prettier": "^2.3.0",
+    "tailwindcss": "^2.1.2",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "unpoly": "^1.0.0"
+  }
+}
