@@ -28,13 +28,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # Third Party Apps
     "taggit",
+    "silk",
     # Local Apps
     "app.apps.AppConfig",
 ]
 
+SITE_ID = 1
+
 MIDDLEWARE = [
+    "silk.middleware.SilkyMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
