@@ -1,7 +1,7 @@
 {% spaceless %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +11,12 @@
     <script src="{% static 'dist/app.js' %}"></script>
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <div class="grid min-h-screen antialised dark:bg-gray-900 dark:text-gray-100"
+      style="grid-template-rows: auto 1fr auto">
+      {% include 'includes/_header.html' %}
+      {% block content %}{% endblock %}
+      {% include 'includes/_footer.html' %}
+    </div>
   </body>
 </html>
 {% endspaceless %}
