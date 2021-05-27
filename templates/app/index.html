@@ -4,7 +4,7 @@
 
 {% block content %}
   {% include 'app/includes/_hero.html' %}
-  <div class="space-y-8 md:space-y-14">
+  <div class="space-y-14">
     <div class="mx-4 md:mx-0 text-center">
       <p
         class="
@@ -50,14 +50,45 @@
           xl:leading-9
         "
       >
-        Here are my latest written articles,
-        I write about programming and server related topics.
+        Here are my latest written articles, I write about programming and server related topics.
       </p>
     </div>
-    <ul class="space-y-16 md:space-y-8">
+    <ul class="space-y-8">
       {% for post in posts %}
         {% include 'app/includes/_post.html' %}
       {% endfor %}
     </ul>
+    <div class="flex justify-center" style="opacity: 1; transform: none">
+      <a
+        href=""
+        class="
+          flex
+          justify-center
+          items-center
+          inline-block
+          px-4
+          py-3
+          font-semibold
+          text-center
+          transition-colors
+          duration-150
+          ease-in-out
+          rounded-md
+          border border-transparent
+          rounded-md
+          focus:outline-none
+          focus:shadow-outline
+          bg-indigo-200
+          text-indigo-800
+          hover:bg-indigo-500
+          hover:text-white
+          dark:bg-indigo-500
+          dark:text-indigo-100
+          dark:hover:bg-indigo-400
+          px-8
+        "
+        >Visit My Blog</a
+      >
+    </div>
   </div>
 {% endblock %}
