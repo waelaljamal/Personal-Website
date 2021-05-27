@@ -14,7 +14,9 @@
     <div class="grid min-h-screen antialised dark:bg-gray-900 dark:text-gray-100"
       style="grid-template-rows: auto 1fr auto">
       {% include 'includes/_header.html' %}
-      {% block content %}{% endblock %}
+      <main class="main container max-w-3xl mx-auto xl:max-w-5xl md:px-4 space-y-14">
+        {% block content %}{% endblock %}
+      </main>
       {% include 'includes/_footer.html' %}
     </div>
   </body>

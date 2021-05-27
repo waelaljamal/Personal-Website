@@ -1,0 +1,33 @@
+{% load static %}
+
+<div class="flex flex-col items-center justify-center p-6 mx-4 space-y-4 bg-indigo-100 rounded-lg shadow-sm
+  md:mx-0 md:space-x-8 xl:p-12 md:space-y-0 md:flex-row dark:bg-gray-800" style="opacity: 1; transform: none;">
+  <picture class="relative flex-none w-40 h-40 rounded-full shadow-xl md:h-48 md:w-48">
+    <div style="display:inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+      <div style="box-sizing:border-box;display:block;max-width:100%">
+        <img src="{% static 'images/me.jpg' %}" class="rounded-full" alt="Abdullah" aria-hidden="true"
+          role="presentation" />
+      </div>
+    </div>
+  </picture>
+  <div class="space-y-2">
+    <h1 class="tracking-tight text-gray-900 dark:text-gray-100 text-4xl xl:text-5xl font-extrabold
+      leading-tight xl:leading-tight">
+      Hey, I'm Abdullah (<a href="https://twitter.com/alnuaimi942" target="_blank" rel="noopener noreferrer"
+      class="text-indigo-500 hover:text-indigo-400">@alnuaimi942</a>)
+    </h1>
+    <p class="text-xl xl:text-3xl xl:leading-snug">I'm a <strong class="font-bold">Full Stack Developer</strong> from
+      <span class="font-bold" aria-label="Iraq">
+        <span class="dark:text-red-500">IR</span>A<span class="dark:text-red-500">Q</span>
+      </span>
+      creating websites using
+      <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer" class="font-semibold
+       text-indigo-500 hover:text-indigo-400">Django
+      </a>
+      &
+      <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="font-semibold
+        text-indigo-500 hover:text-indigo-400">Tailwindcss
+      </a>
+    </p>
+  </div>
+</div>

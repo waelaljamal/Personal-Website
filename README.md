@@ -1,6 +1,6 @@
 # Personal Blog
 
-Personal Blog By Using Django Framework.
+Personal Blog By Using **Django** Framework & Integrate it with **Tailwindcss** & **Unpoly** js Libraries.
 
 ## Installation:
 
