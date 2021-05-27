@@ -4,4 +4,60 @@
 
 {% block content %}
   {% include 'app/includes/_hero.html' %}
+  <div class="space-y-8 md:space-y-14">
+    <div class="mx-4 md:mx-0 lg:text-center">
+      <p
+        class="
+          font-semibold
+          leading-6
+          tracking-wide
+          text-indigo-600
+          uppercase
+          text-md
+          mb-2
+          xl:text-xl
+          xl:leading-6
+          dark:text-indigo-500
+        "
+      >
+        Blog
+      </p>
+      <h2
+        class="
+          tracking-tight
+          text-gray-900
+          dark:text-gray-100
+          text-3xl
+          md:text-4xl
+          xl:text-5xl
+          font-extrabold
+          leading-tight
+          xl:leading-tight
+        "
+      >
+        Latest Articles
+      </h2>
+      <p
+        class="
+          max-w-2xl
+          mt-4
+          text-xl
+          md:text-2xl
+          leading-9
+          text-gray-500
+          dark:text-gray-100
+          lg:mx-auto
+          xl:leading-9
+        "
+      >
+        Here are my latest written articles, I hope you like them! <br />
+        I write about programming and server related topics.
+      </p>
+    </div>
+    <ul class="space-y-16 md:space-y-8">
+      {% for post in posts %}
+        {% include 'app/includes/_post.html' %}
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

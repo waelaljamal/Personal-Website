@@ -1,0 +1,164 @@
+<li style="opacity: 1; transform: none">
+  <article
+    class="
+      relative
+      inline-block
+      p-4
+      text-gray-900
+      rounded-md
+      outline-none
+      group
+      dark:text-gray-100
+      post-item
+      hover:bg-gray-100
+      hover:text-gray-700
+      focus:bg-gray-100
+      focus:shadow-sm
+      focus:text-gray-700
+      dark:focus:bg-gray-800
+      dark:hover:bg-gray-800
+    "
+  >
+    <a
+      href=""
+      class="absolute top-0 bottom-0 left-0 right-0"
+      aria-label="{{ post.title }}"
+    ></a>
+    <div
+      class="
+        relative
+        z-10
+        space-y-4
+        pointer-events-none
+        xl:space-y-0
+        xl:grid xl:grid-cols-4
+        xl:col-gap-6
+      "
+    >
+      <div class="flex items-center pr-4 xl:space-x-6 xl:pb-0 xl:col-span-3">
+        <div class="flex-shrink-0 hidden w-12 h-12 xl:inline-block">
+          <div
+            style="
+              display: inline-block;
+              max-width: 100%;
+              overflow: hidden;
+              position: relative;
+              box-sizing: border-box;
+              margin: 0;
+            "
+          >
+            <div style="box-sizing: border-box; display: block; max-width: 100%">
+              <img
+                style="max-width: 100%; display: block; margin: 0; border: none; padding: 0"
+                alt=""
+                aria-hidden="true"
+                role="presentation"
+                src="{{ post.image.url }}"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <h3
+            class="
+              tracking-tight
+              text-gray-900
+              dark:text-gray-100
+              text-2xl
+              xl:text-3xl
+              font-bold
+              leading-snug
+              xl:leading-snug
+            "
+          >
+            {{ post.title }}
+          </h3>
+          <p
+            class="text-lg tracking-tight text-gray-800 xl:text-xl xl:leading-8 dark:text-gray-100"
+          >
+            {{ post.summary }}
+          </p>
+        </div>
+      </div>
+      <div
+        class="
+          flex
+          items-center
+          pt-4
+          space-x-6
+          border-t border-gray-200
+          dark:group-hover:border-gray-700
+          dark:border-gray-800
+          xl:pl-4
+          xl:pt-0
+          xl:space-x-0
+          xl:border-l xl:border-t-0
+        "
+      >
+        <div class="inline-block w-12 h-12 xl:hidden">
+          <div
+            style="
+              display: inline-block;
+              max-width: 100%;
+              overflow: hidden;
+              position: relative;
+              box-sizing: border-box;
+              margin: 0;
+            "
+          >
+            <div style="box-sizing: border-box; display: block; max-width: 100%">
+              <img
+                style="max-width: 100%; display: block; margin: 0; border: none; padding: 0"
+                alt=""
+                aria-hidden="true"
+                role="presentation"
+                src="{{ post.image.url }}"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <dl>
+            <dt class="sr-only">Published on</dt>
+            <dd
+              class="
+                text-base
+                font-medium
+                leading-6
+                dark:text-gray-200
+              "
+            >
+              <time datetime="{{ post.published_at }}">{{ post.published_at|date:'F d, Y' }}</time>
+            </dd>
+          </dl>
+          <ul class="flex flex-wrap">
+            {% for tag in post.tags.all %}
+            <li class="flex-none mt-2 mr-2">
+              <a
+                href=""
+                class="
+                  pointer-events-auto
+                  inline-block
+                  rounded-md
+                  px-2
+                  py-1
+                  text-sm
+                  font-semibold
+                  transition-colors
+                  duration-200
+                  ease-in-out
+                  bg-yellow-200
+                  text-black
+                  hover:bg-yellow-300
+                  hover:text-black
+                "
+                >{{ tag.name }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+</li>
