@@ -3,7 +3,7 @@
 {% block title %}Welcome - {{ block.super }}{% endblock %}
 
 {% block content %}
-  {% include 'app/includes/_hero.html' %}
+  {% include 'core/includes/_hero.html' %}
   <div class="space-y-14">
     <div class="mx-4 md:mx-0 text-center">
       <p
@@ -55,7 +55,7 @@
     </div>
     <ul class="space-y-8">
       {% for post in posts %}
-        {% include 'app/includes/_post.html' %}
+        {% include 'blog/includes/_post.html' %}
       {% endfor %}
     </ul>
     <div class="flex justify-center" style="opacity: 1; transform: none">

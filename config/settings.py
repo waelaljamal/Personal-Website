@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     "taggit",
     "silk",
     # Local Apps
-    "app.apps.AppConfig",
+    "apps.blog",
 ]
 
 SITE_ID = 1

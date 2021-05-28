@@ -3,7 +3,7 @@ from django.utils.timezone import datetime
 
 from taggit.managers import TaggableManager
 
-from .abstract_models import AbstractTimeStamp
+from apps.core.abstract_models import AbstractTimeStamp
 
 
 class Post(AbstractTimeStamp):

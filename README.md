@@ -1,6 +1,6 @@
-# Personal Blog
+# Personal Website
 
-Personal Blog By Using **Django** Framework & Integrate it with **Tailwindcss** & **Unpoly** js Libraries.
+Personal Website By Using **Django** Framework & Integrate it with **Tailwindcss** & **Unpoly** js Libraries.
 
 ## Installation:
 
