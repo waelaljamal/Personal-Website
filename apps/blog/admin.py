@@ -5,7 +5,8 @@ from .models import Post, CustomTag
 
 @admin.register(CustomTag)
 class CustomTagModelAdmin(admin.ModelAdmin):
-    list_display = ["name", "slug"]
+    list_display = ["name", "slug", "background_color", "text_color"]
+    list_editable = ["background_color", "text_color"]
     search_fields = ["id", "name", "slug"]
     prepopulated_fields = {"slug": ["name"]}
 
