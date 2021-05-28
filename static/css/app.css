@@ -51,4 +51,40 @@
   background-color: rgba(129, 140, 248, var(--tw-bg-opacity));
 }
 
+/* blue color */
+
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(96,165,250,var(--tw-bg-opacity));
+}
+
+.hover\:bg-blue-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(59,130,246,var(--tw-bg-opacity));
+}
+
+/* purple color */
+
+.bg-purple-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(167,139,250,var(--tw-bg-opacity));
+}
+
+.hover\:bg-purple-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(139,92,246,var(--tw-bg-opacity));
+}
+
+/* gray color */
+
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(107,114,128,var(--tw-bg-opacity));
+}
+
 @import 'tailwindcss/utilities';

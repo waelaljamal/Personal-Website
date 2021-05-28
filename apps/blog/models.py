@@ -13,7 +13,6 @@ class CustomTag(TagBase):
         ("gray", "gray"),
         ("red", "red"),
         ("blue", "blue"),
-        ("teal", "teal"),
         ("green", "green"),
         ("purple", "purple"),
         ("indigo", "indigo"),
