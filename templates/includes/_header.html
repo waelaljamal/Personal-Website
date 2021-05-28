@@ -39,8 +39,9 @@
       "
     >
       <li class="relative">
+        {% url 'blog:post_list' as blog_url %}
         <a
-          href="#"
+          href="{{ blog_url }}"
           class="
             relative
             z-10
@@ -53,8 +54,13 @@
             rounded-md
             sm:inline
             md:px-4
+            {% if request.path == blog_url %}
+            bg-gray-800
+            {% else %}
             hover:bg-gray-800
+            {% endif %}
           "
+          up-dash
         >
           <span class="font-semibold text-md">Blog</span>
         </a>

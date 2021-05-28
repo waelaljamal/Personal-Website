@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}Blog - {{ block.super }}{% endblock %}
+
+{% block content %}
+  <div class="space-y-14">
+    {% block blog_content %}{% endblock %}
+    {% if is_paginated %}
+      {% include 'includes/_pagination.html' %}
+    {% endif %}
+  </div>
+{% endblock %}

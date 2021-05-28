@@ -4,6 +4,8 @@ Personal Website By Using **Django** Framework & Integrate it with **Tailwindcss
 
 ![Home Page Screenshot](https://github.com/alnuaimi94/Personal-Website/raw/main/static/images/screenshots/desktop-home.png)
 
+![Blog Page Screenshot](https://github.com/alnuaimi94/Personal-Website/raw/main/static/images/screenshots/desktop-blog.png)
+
 ## Installation:
 
 - Clone the project:
