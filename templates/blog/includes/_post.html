@@ -147,10 +147,9 @@
                   transition-colors
                   duration-200
                   ease-in-out
-                  bg-yellow-200
-                  text-black
-                  hover:bg-yellow-300
-                  hover:text-black
+                  bg-{{ tag.background_color }}-400
+                  text-{{ tag.text_color }}
+                  hover:bg-{{ tag.background_color }}-500
                 "
                 >{{ tag.name }}</a
               >

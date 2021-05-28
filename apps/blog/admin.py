@@ -1,6 +1,13 @@
 from django.contrib import admin
 
-from .models import Post
+from .models import Post, CustomTag
+
+
+@admin.register(CustomTag)
+class CustomTagModelAdmin(admin.ModelAdmin):
+    list_display = ["name", "slug"]
+    search_fields = ["id", "name", "slug"]
+    prepopulated_fields = {"slug": ["name"]}
 
 
 @admin.register(Post)

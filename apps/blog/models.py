@@ -2,8 +2,51 @@ from django.db import models
 from django.utils.timezone import datetime
 
 from taggit.managers import TaggableManager
+from taggit.models import TagBase, GenericTaggedItemBase
 
 from apps.core.abstract_models import AbstractTimeStamp
+
+
+class CustomTag(TagBase):
+    BACKGROUND_COLORS_CHOICES = (
+        ("yellow", "yellow"),
+        ("gray", "gray"),
+        ("red", "red"),
+        ("blue", "blue"),
+        ("teal", "teal"),
+        ("green", "green"),
+        ("purple", "purple"),
+        ("indigo", "indigo"),
+    )
+
+    TEXT_COLORS_CHOICES = (
+        ("black", "black"),
+        ("white", "white"),
+    )
+
+    background_color = models.CharField(
+        choices=BACKGROUND_COLORS_CHOICES,
+        default="yellow",
+        max_length=10,
+    )
+    text_color = models.CharField(
+        choices=TEXT_COLORS_CHOICES,
+        default="black",
+        max_length=10,
+    )
+
+    class Meta:
+        verbose_name = "Tag"
+        verbose_name_plural = "Tags"
+
+
+class TaggedWhatever(GenericTaggedItemBase):
+    # Here is where you provide your custom Tag class.
+    tag = models.ForeignKey(
+        CustomTag,
+        on_delete=models.CASCADE,
+        related_name="%(app_label)s_%(class)s_items",
+    )
 
 
 class Post(AbstractTimeStamp):
@@ -18,7 +61,7 @@ class Post(AbstractTimeStamp):
     content = models.TextField()
     image = models.ImageField(upload_to="posts/")
 
-    tags = TaggableManager()
+    tags = TaggableManager(through=TaggedWhatever, related_name="posts")
 
     status = models.CharField(
         choices=STATUS_CHOICES,

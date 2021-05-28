@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     # Third Party Apps
-    "taggit",
     "silk",
     # Local Apps
     "apps.blog",
