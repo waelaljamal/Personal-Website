@@ -4,16 +4,17 @@ from django.views.generic import ListView
 from .models import Post, CustomTag
 
 
-class PostListView(ListView):
+class BlogBaseMixin(ListView):
     queryset = Post.objects.filter(status="published")
     context_object_name = "posts"
     paginate_by = 3
 
 
-class TagView(ListView):
-    queryset = Post.objects.filter(status="published")
-    context_object_name = "posts"
-    paginate_by = 3
+class PostListView(BlogBaseMixin):
+    pass
+
+
+class TagView(BlogBaseMixin):
     template_name = "blog/tag_detail.html"
 
     def get_queryset(self, **kwargs):

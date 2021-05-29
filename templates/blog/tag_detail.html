@@ -1,34 +1,10 @@
 {% extends 'blog/_base.html' %}
 
+{% load blog_tags %}
+
 {% block title %}{{ tag.name }} - {{ block.super }}{% endblock %}
 
 {% block blog_content %}
   {% include 'blog/includes/_about_blog.html' with is_tag_page=True %}
-  <ul class="space-y-8">
-    {% regroup posts by published_at.year as year_list %}
-    {% for year in year_list %}
-      <h3
-        class="
-          tracking-tight
-          text-gray-900
-          dark:text-gray-100
-          text-2xl
-          xl:text-3xl
-          font-bold
-          leading-snug
-          xl:leading-snug
-          mx-4
-          text-indigo-500
-          border-b-2 border-gray-100
-          dark:border-gray-800
-          md:mx-0
-        "
-      >
-      Year {{ year.grouper }}
-      </h3>
-      {% for post in year.list %}
-        {% include 'blog/includes/_post.html' %}
-      {% endfor %}
-    {% endfor %}
-  </ul>
+  {% load_posts_summary posts %}
 {% endblock %}
