@@ -1,4 +1,42 @@
 <div class="mx-4 md:mx-0 text-center">
+  {% if is_tag_page %}
+  <h1
+    class="
+      tracking-tight
+      text-gray-900
+      dark:text-gray-100
+      text-3xl
+      md:text-4xl
+      xl:text-5xl
+      font-bold
+      leading-tight
+      flex
+      items-center
+      space-x-2
+    "
+  >
+    <span class="font-bold text-{{ tag.background_color }}-400">
+      {{ tag.posts.count }}
+    </span>
+    <span>Posts in</span>
+    <span
+      class="
+        inline-block
+        rounded-md
+        px-3
+        md:px-4
+        py-1
+        md:py-2
+        text-2xl
+        md:text-3xl
+        font-semibold
+        bg-{{ tag.background_color }}-400
+        text-{{ tag.text_color }}
+      "
+      >{{ tag.name }}</span
+    >
+  </h1>
+  {% else %}
   <p
     class="
       font-semibold
@@ -49,4 +87,5 @@
   >
     Here are my latest written articles, I write about programming and server related topics.
   </p>
+  {% endif %}
 </div>

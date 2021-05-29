@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 from django.utils.timezone import datetime
 
 from taggit.managers import TaggableManager
@@ -37,6 +38,9 @@ class CustomTag(TagBase):
     class Meta:
         verbose_name = "Tag"
         verbose_name_plural = "Tags"
+
+    def get_absolute_url(self):
+        return reverse_lazy("blog:tag_detail", kwargs={"slug": self.slug})
 
 
 class TaggedWhatever(GenericTaggedItemBase):

@@ -135,7 +135,7 @@
             {% for tag in post.tags.all %}
             <li class="flex-none mt-2 mr-2">
               <a
-                href="#"
+                href="{{ tag.get_absolute_url }}"
                 class="
                   pointer-events-auto
                   inline-block
@@ -151,6 +151,7 @@
                   text-{{ tag.text_color }}
                   hover:bg-{{ tag.background_color }}-500
                 "
+                up-dash
                 >
                 {{ tag.name }}
               </a>
